@@ -1,0 +1,140 @@
+.app-container {
+  text-align: center;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button,
+.button,
+.logout-button,
+.back-button {
+  padding: 12px 24px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.primary-button,
+.button {
+  background: #007bff;
+  color: #fff;
+}
+
+.primary-button:hover,
+.button:hover {
+  background: #0056d6;
+}
+
+.secondary-button {
+  background: #6c757d;
+  color: #fff;
+}
+
+.secondary-button:hover {
+  background: #5a6268;
+}
+
+.logout-button,
+.back-button {
+  background: #dc3545;
+  color: #fff;
+}
+
+.logout-button:hover,
+.back-button:hover {
+  background: #c82333;
+}
+
+.auth-card,
+.welcome-section,
+.main-card,
+.result-card {
+  background: #fff;
+  padding: 30px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+.result-card {
+  background: #e6ffe6;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.link-text {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .auth-card,
+  .main-card,
+  .result-card,
+  .welcome-section {
+    max-width: 100%;
+    padding: 25px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+}

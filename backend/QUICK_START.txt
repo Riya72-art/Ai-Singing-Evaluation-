@@ -1,0 +1,59 @@
+# Quick Setup for Windows PowerShell
+
+## Copy & Paste These Commands
+
+### Step 1: Navigate to Backend
+```powershell
+cd "C:\Users\Riya Yadav\OneDrive\Desktop\AI SINGING\AI Singing Quality Evaluation System\backend"
+```
+
+### Step 2: Create & Activate Virtual Environment
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+
+### Step 3: Install Python Dependencies
+```powershell
+pip install --upgrade pip
+pip install fastapi==0.104.1 uvicorn==0.24.0 sqlalchemy==2.0.23 psycopg==3.1.12 python-dotenv==1.0.0 pydantic==2.5.0 pydantic-settings==2.1.0 python-jose==3.3.0 passlib==1.7.4 bcrypt==4.1.1 python-multipart==0.0.6 aiofiles==23.2.1 librosa==0.10.0 numpy==1.24.3 scipy==1.11.4 soundfile==0.12.1 cryptography==41.0.7
+```
+
+### Step 4: Update .env File
+Create `.env` file with:
+```
+DATABASE_URL=sqlite:///./test.db
+SECRET_KEY=your-secret-key-here-change-in-production
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+DEBUG=True
+HOST=0.0.0.0
+PORT=8000
+MAX_FILE_SIZE=52428800
+ALLOWED_AUDIO_FORMATS=mp3,wav,m4a,flac,ogg
+UPLOAD_DIR=uploads/audio
+```
+
+### Step 5: Run Backend Server
+```powershell
+python main.py
+```
+
+## If You See SUCCESS:
+```
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Application startup complete
+```
+
+You're good to go! 🚀
+
+---
+
+## For Frontend (in NEW PowerShell window)
+
+```powershell
+cd "C:\Users\Riya Yadav\OneDrive\Desktop\AI SINGING\AI Singing Quality Evaluation System\frontend"
+npm start
+```
+
+Then visit: http://localhost:3000

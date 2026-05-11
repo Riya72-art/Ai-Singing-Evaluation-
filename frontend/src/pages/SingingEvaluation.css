@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+.eval-page {
+  min-height: 100vh;
+  background: #07070e;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  padding: 40px 20px 80px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.eval-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.eval-header h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #a78bfa, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 8px;
+  letter-spacing: -1px;
+}
+
+.eval-header p {
+  color: rgba(255,255,255,0.4);
+  font-size: 1rem;
+  margin: 0 0 12px;
+}
+
+.eval-user {
+  display: inline-block;
+  background: rgba(124,58,237,0.15);
+  border: 1px solid rgba(124,58,237,0.3);
+  border-radius: 20px;
+  color: #a78bfa;
+  font-size: 0.8rem;
+  padding: 4px 14px;
+}
+
+/* ── Drop Zone ── */
+.drop-zone {
+  border: 2px dashed rgba(255,255,255,0.12);
+  border-radius: 20px;
+  padding: 50px 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: rgba(255,255,255,0.02);
+  margin-bottom: 24px;
+}
+
+.drop-zone:hover,
+.drop-zone.drag-over {
+  border-color: #7c3aed;
+  background: rgba(124,58,237,0.06);
+  box-shadow: 0 0 40px rgba(124,58,237,0.1);
+}
+
+.drop-zone.has-file {
+  border-color: rgba(52,211,153,0.4);
+  background: rgba(52,211,153,0.04);
+}
+
+.upload-icon, .file-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.upload-text, .file-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 6px;
+}
+
+.upload-hint, .file-size, .file-hint {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.3);
+}
+
+.file-size { margin-bottom: 8px; }
+
+/* ── Error ── */
+.eval-error {
+  background: rgba(239,68,68,0.1);
+  border: 1px solid rgba(239,68,68,0.25);
+  border-radius: 12px;
+  color: #f87171;
+  font-size: 0.875rem;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* ── Evaluate Button ── */
+.eval-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  border: none;
+  border-radius: 14px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 18px;
+  transition: all 0.2s;
+  min-height: 58px;
+}
+
+.eval-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(124,58,237,0.35);
+}
+
+.eval-btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.spinner {
+  width: 18px; height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Results ── */
+.results-section {
+  margin-top: 40px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Overall */
+.overall-card {
+  background: linear-gradient(135deg, rgba(124,58,237,0.15), rgba(37,99,235,0.1));
+  border: 1px solid rgba(124,58,237,0.25);
+  border-radius: 20px;
+  padding: 36px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.overall-label {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+.overall-score {
+  font-family: 'Syne', sans-serif;
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.overall-unit {
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+.overall-grade {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+}
+
+/* Score Grid */
+.scores-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.score-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+
+.score-card:hover { border-color: rgba(167,139,250,0.3); }
+
+.score-icon { font-size: 1.5rem; margin-bottom: 8px; }
+
+.score-label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.score-bar-wrap {
+  background: rgba(255,255,255,0.07);
+  border-radius: 999px;
+  height: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.score-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.score-value {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* Feedback + Tips */
+.feedback-card,
+.tips-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 16px;
+}
+
+.feedback-card h3,
+.tips-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.75);
+  margin: 0 0 14px;
+}
+
+.feedback-card p {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.tips-card ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.tips-card li {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+/* Reset */
+.reset-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  padding: 14px;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.reset-btn:hover {
+  border-color: rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.7);
+}
+
+@media (max-width: 480px) {
+  .scores-grid { grid-template-columns: 1fr; }
+  .eval-header h1 { font-size: 1.8rem; }
+}
