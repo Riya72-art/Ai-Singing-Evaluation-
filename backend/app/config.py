@@ -28,9 +28,9 @@ class Settings(BaseSettings):
     ACR_ACCESS_SECRET: str = "your-acrcloud-access-secret"
 
     # Groq AI
-    GROQ_API_KEY: str = "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"  # ← add this line
+    GROQ_API_KEY: str = ""  # Set via environment variable
     # Audd API
-    AUDD_API_KEY: str = "f40fec2af9815fa74004c21a92179c3b" 
+    AUDD_API_KEY: str = ""  # Set via environment variable 
     class Config:
         env_file = ".env"
 
